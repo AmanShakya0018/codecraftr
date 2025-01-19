@@ -24,16 +24,13 @@ export default function Home() {
   const [theme, setTheme] = useState<typeof nightOwl>(nightOwl);
   const [loading, setLoading] = useState<boolean>(false);
   const [gradient, setGradient] = useState<string>("linear-gradient(100deg, rgba(245,230,60,0.6) 10%, rgba(255,160,20,1) 80%)");
-  const [checkBackgroundVisibility, setCheckBackgroundVisibility] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const toggleBackgroundVisibility = () => {
-    setCheckBackgroundVisibility(!checkBackgroundVisibility);
-  };
+
 
   if (!mounted) return null;
 
@@ -42,7 +39,6 @@ export default function Home() {
       <CodeTextarea code={code} setCode={setCode} />
       <MainCode
         id="code-snap"
-        checkBackgroundVisibility={checkBackgroundVisibility}
         gradient={gradient}
       >
         <Codesnippet>
@@ -81,8 +77,6 @@ export default function Home() {
         <BackgroundGradientInput
           gradient={gradient}
           setGradient={setGradient}
-          toggleBackgroundVisibility={toggleBackgroundVisibility}
-          checkBackgroundVisibility={checkBackgroundVisibility}
         />
         <FontSizeInput fontSize={fontSize} setFontSize={setFontSize} />
         <DownloadButton saveCodeSnapshot={() => saveCodeSnapshot("code-snap", filename, setLoading)} loading={loading} />

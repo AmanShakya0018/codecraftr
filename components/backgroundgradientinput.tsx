@@ -1,22 +1,16 @@
 import React from "react";
 import { Label } from "./ui/label";
-import { Button } from "./ui/button";
-import { Eye, EyeOff } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "./ui/select";
 import { gradients } from "@/constants";
 
 interface BackgroundGradientInputProps {
   gradient: string;
   setGradient: (color: string) => void;
-  toggleBackgroundVisibility: () => void;
-  checkBackgroundVisibility: boolean;
 }
 
 function BackgroundGradientInput({
   gradient,
   setGradient,
-  toggleBackgroundVisibility,
-  checkBackgroundVisibility,
 }: BackgroundGradientInputProps) {
   return (
     <div className="space-y-1">
@@ -48,16 +42,6 @@ function BackgroundGradientInput({
             }
           </SelectContent>
         </Select>
-        <Button
-          onClick={toggleBackgroundVisibility}
-          className="h-8 bg-white dark:bg-black border border-zinc-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-gray-200"
-        >
-          {checkBackgroundVisibility ? (
-            <EyeOff className="!h-4 !w-4" />
-          ) : (
-            <Eye className="!h-4 !w-4" />
-          )}
-        </Button>
       </div>
     </div>
   );
