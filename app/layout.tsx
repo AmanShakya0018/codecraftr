@@ -10,7 +10,7 @@ const atma = Atma({
 
 
 export const metadata: Metadata = {
-  title: "CodeSnap - Generate Code Snippets",
+  title: "CodeCraftr - Generate Code Snippets",
   description: "Built with Passion by Aman",
 };
 

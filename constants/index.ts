@@ -1,4 +1,4 @@
-export const filename = "codesnap.png";
+export const filename = "codecraftr.png";
 
 import {
   a11yDark,

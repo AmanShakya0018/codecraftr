@@ -1,5 +1,5 @@
 import React from 'react';
-import Codesnap from './codesnap';
+import CodeCraftr from './codecraftr';
 import Socials from './socials';
 import Sectioncontainer from './sectioncontainer';
 import Topcontainer from './topcontainer';
@@ -12,7 +12,7 @@ const FixedTopSection = ({ children }: FixedTopSectionProps) => {
   return (
     <Sectioncontainer>
       <Topcontainer>
-        <Codesnap />
+        <CodeCraftr />
         <div className="flex items-center gap-8 h-20 text-black ">
           {children}
         </div>
