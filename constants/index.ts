@@ -100,6 +100,7 @@ export const themes: Record<string, any> = {
 export const gradients = [
   { name: "Amber Horizon", gradient: "linear-gradient(100deg, rgba(245,230,60,0.6) 10%, rgba(255,160,20,1) 80%)" },
   { name: "Amber Radiance", gradient: "linear-gradient(90deg, rgba(20,50,70,0.8) 10%, rgba(160,60,20,0.7) 35%, rgba(255,180,10,0.8) 70%)" },
+  { name: "Amber Twilight", gradient: "radial-gradient(circle at 40% 40%, rgba(255,180,60,0.9) 0%, rgba(255,100,40,0.7) 50%, rgba(80,40,20,1) 100%)"},
   { name: "Aqua Glow", gradient: "linear-gradient(180deg, rgba(90,220,250,1) 10%, rgba(30,60,220,1) 80%)" },
   { name: "Aurora Drift", gradient: "linear-gradient(120deg, rgba(100,230,255,0.4) 15%, rgba(200,80,240,0.3) 50%, rgba(255,120,255,0.6) 85%, rgba(100,160,255,1) 100%)" },
   { name: "Arctic Aurora", gradient: "linear-gradient(180deg, rgba(0,50,80,1) 0%, rgba(0,200,255,0.7) 50%, rgba(200,255,220,1) 100%)" },
@@ -108,14 +109,17 @@ export const gradients = [
   { name: "Cherry Bloom", gradient: "radial-gradient(circle farthest-corner at 10% 15%, rgba(240,120,120,1) 0%, rgba(250,255,150,1) 80%)" },
   { name: "Cosmic Twilight", gradient: "linear-gradient(135deg, rgba(50,0,60,1) 0%, rgba(200,70,120,0.8) 50%, rgba(255,150,50,0.9) 100%)" },
   { name: "Crimson Dawn", gradient: "linear-gradient(109.6deg, rgba(200,0,0,1) 15%, rgba(85,0,0,1) 95%)" },
+  { name: "Crystalline Bloom", gradient: "linear-gradient(135deg, rgba(180,255,220,1) 10%, rgba(120,180,255,0.8) 50%, rgba(220,120,240,1) 90%)" },
   { name: "Desert Mirage", gradient: "radial-gradient(circle 350px at 15% 40%, rgba(240,230,180,1) 0%, rgba(128,220,200,1) 100%)" },
   { name: "Emerald Drift", gradient: "linear-gradient(120deg, rgba(80,170,170,1) 20%, rgba(10,10,10,1) 95%)" },
+  { name: "Ethereal Glow", gradient: "linear-gradient(150deg, rgba(220,240,255,1) 10%, rgba(150,210,240,0.7) 50%, rgba(50,120,220,0.4) 90%)" },
   { name: "Frosted Jade", gradient: "linear-gradient(145deg, rgba(70,180,140,1) 10%, rgba(230,255,240,1) 90%)" },
   { name: "Golden Skies", gradient: "linear-gradient(90deg, rgba(140,200,240,1) 10%, rgba(255,150,120,1) 40%, rgba(255,200,50,1) 90%)" },
   { name: "Glacial Flame", gradient: "linear-gradient(100deg, rgba(255,200,200,0.8) 15%, rgba(255,220,130,0.85) 45%, rgba(255,250,250,1) 90%)" },
   { name: "Jungle Whisper", gradient: "radial-gradient(circle farthest-corner at 80% 15%, rgba(15,150,45,1) 0%, rgba(25,25,25,1) 95%)" },
   { name: "Mint Frost", gradient: "radial-gradient(circle at 20% 80%, rgba(200,255,230,1) 0%, rgba(70,200,170,1) 60%, rgba(0,100,80,1) 100%)" },
   { name: "Molten Sunset", gradient: "linear-gradient(300deg, rgba(255,100,50,1) 0%, rgba(200,50,50,0.8) 40%, rgba(100,0,50,1) 100%)" },
+  { name: "Mystic Dusk", gradient: "linear-gradient(110deg, rgba(30,30,60,1) 20%, rgba(80,60,150,1) 50%, rgba(180,100,200,0.8) 90%)" },
   { name: "Lavender Mist", gradient: "linear-gradient(45deg, rgba(230,210,240,1) 0%, rgba(160,130,240,0.8) 50%, rgba(110,90,220,1) 100%)" },
   { name: "Lunar Cascade", gradient: "radial-gradient(circle farthest-corner at 30% 30%, rgba(200,200,255,1) 10%, rgba(50,50,80,1) 95%)" },
   { name: "Nocturnal Veil", gradient: "linear-gradient(1deg, rgba(30,20,20,1) 5%, rgba(30,20,20,0.7) 95%, rgba(30,20,20,0.2) 120%)" },
@@ -126,7 +130,7 @@ export const gradients = [
   { name: "Rosewood Ember", gradient: "linear-gradient(125deg, rgba(180,70,70,1) 10%, rgba(250,200,150,1) 85%)" },
   { name: "Skylit Azure", gradient: "radial-gradient(circle 1200px at 15% 10%, rgba(255,255,255,1) 0%, rgba(150,210,250,1) 95%)" },
   { name: "Solar Blossom", gradient: "linear-gradient(60deg, rgba(250,80,80,1) 10%, rgba(255,180,80,0.85) 40%, rgba(255,240,90,0.85) 70%, rgba(100,220,90,0.85) 90%)" },
-  { name: "Spectrum Gleam", gradient: "linear-gradient(240deg, rgba(255,30,10,1) 30%, rgba(250,150,10,1) 35%, rgba(255,240,10,1) 50%, rgba(40,230,10,1) 65%, rgba(10,150,250,1) 85%, rgba(120,70,250,1) 100%)" }
+  { name: "Spectrum Gleam", gradient: "linear-gradient(240deg, rgba(255,30,10,1) 30%, rgba(250,150,10,1) 35%, rgba(255,240,10,1) 50%, rgba(40,230,10,1) 65%, rgba(10,150,250,1) 85%, rgba(120,70,250,1) 100%)" },
+  { name: "Velvet Ember", gradient: "radial-gradient(circle farthest-corner at 30% 60%, rgba(120,40,40,1) 0%, rgba(220,80,60,0.85) 60%, rgba(255,220,180,0.5) 100%)" },
 ];
-
 

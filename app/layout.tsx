@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Atma } from "next/font/google";
 import Provider from "@/components/Provider";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const atma = Atma({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Provider>
           {children}
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
