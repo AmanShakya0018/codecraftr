@@ -30,8 +30,6 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-
-
   if (!mounted) return null;
 
   return (
