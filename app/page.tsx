@@ -1,86 +1,101 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { filename, themes } from "@/constants";
-import { saveCodeSnapshot } from "@/lib/saveSnapshot";
-import DownloadButton from "@/components/Downloadbutton";
-import FontSizeInput from "@/components/Fontsizeinput";
-import BackgroundGradientInput from "@/components/backgroundgradientinput";
-import LanguageSelect from "@/components/Languageselect";
-import FixedTopSection from "@/components/Fixedsection";
-import Maincontainer from "@/components/Maincontainer";
-import CodeTextarea from "@/components/Codetextarea";
-import Codesnippet from "@/components/Codesnippet";
-import Highlightedcode from "@/components/Highlightedcode";
-import MainCode from "@/components/Maincode";
+import Image from "next/image";
 
 export default function Home() {
-  const [code, setCode] = useState<string>("");
-  const [fontSize, setFontSize] = useState<number>(14);
-  const [language, setLanguage] = useState<string>("typescript");
-  const [theme, setTheme] = useState<typeof nightOwl>(nightOwl);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [gradient, setGradient] = useState<string>("linear-gradient(100deg, rgba(245,230,60,0.6) 10%, rgba(255,160,20,1) 80%)");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-
-
-  if (!mounted) return null;
-
   return (
-    <Maincontainer>
-      <CodeTextarea code={code} setCode={setCode} />
-      <MainCode
-        id="code-snap"
-        gradient={gradient}
-      >
-        <Codesnippet>
-          <Highlightedcode
-            language={language}
-            theme={theme}
-            fontSize={fontSize}
-            code={code}
-          />
-        </Codesnippet>
-      </MainCode>
-
-      <FixedTopSection>
-        <div className="space-y-1">
-          <Label className="text-xs text-black dark:text-white" htmlFor="theme">
-            Theme
-          </Label>
-          <Select
-            onValueChange={(value: string) => {
-              setTheme(themes[value]);
-            }}
-          >
-            <SelectTrigger className="w-28 h-8 text-xs text-black dark:text-white text-center bg-white dark:bg-black border-zinc-300 dark:border-neutral-800">
-              <SelectValue placeholder="nightOwl" className="text-center " />
-            </SelectTrigger>
-            <SelectContent>
-              {Object.keys(themes).map((theme) => (
-                <SelectItem key={theme} value={theme}>
-                  {theme}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <LanguageSelect setLanguage={setLanguage} />
-        <BackgroundGradientInput
-          gradient={gradient}
-          setGradient={setGradient}
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
         />
-        <FontSizeInput fontSize={fontSize} setFontSize={setFontSize} />
-        <DownloadButton saveCodeSnapshot={() => saveCodeSnapshot("code-snap", filename, setLoading)} loading={loading} />
-      </FixedTopSection>
-    </Maincontainer>
+        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          <li className="mb-2">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
+              app/page.tsx
+            </code>
+            .
+          </li>
+          <li>Save and see your changes instantly.</li>
+        </ol>
+
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
+        </div>
+      </main>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
+      </footer>
+    </div>
   );
 }
