@@ -79,6 +79,7 @@ export default function Home() {
         <FontSizeInput fontSize={fontSize} setFontSize={setFontSize} />
         <DownloadButton saveCodeSnapshot={() => saveCodeSnapshot("code-snap", filename, setLoading)} loading={loading} />
       </FixedTopSection>
+
     </Maincontainer>
   );
 }
